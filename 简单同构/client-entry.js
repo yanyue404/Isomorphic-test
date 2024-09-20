@@ -1,3 +1,6 @@
-import { createApp } from './app.js'
+import { createApp } from "./app.js";
 
-createApp().mount('#app');
+// 在客户端挂载一个 SSR 应用时会假定
+// HTML 是预渲染的，然后执行激活过程，
+// 而不是挂载新的 DOM 节点
+createApp().mount("#app");

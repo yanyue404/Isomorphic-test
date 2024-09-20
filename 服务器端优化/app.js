@@ -1,21 +1,20 @@
-import { createSSRApp } from 'vue'
+import { createSSRApp } from "vue";
 
 // 用于服务器数据预取的接口
 // 生成三个随机数
 const getRandomNums = async () => {
   const randomNums = [];
   for (let i = 0; i < 3; i++) {
-      // 远程接口不好测试，这里换成手动mock接口
-      const res = await new Promise((resolve) => {
-          setTimeout(() => {
-              resolve(Math.random());
-          }, 100);
-      });
-      randomNums.push(res);
+    // 远程接口不好测试，这里换成手动mock接口
+    const res = await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Math.random());
+      }, 100);
+    });
+    randomNums.push(res);
   }
   return randomNums;
-}
-
+};
 
 // 通过createSSRApp创建一个vue实例
 // 该文件在服务器和客户端都会调用，所以抽成公共文件
@@ -38,9 +37,8 @@ export function createApp() {
         // 如果没有数据，就请求数据
         this.nums = await getRandomNums();
       }
-    }
+    },
   };
-
 
   return createSSRApp(component);
 }

@@ -1,27 +1,27 @@
-import express from 'express'
-import { renderToString } from 'vue/server-renderer'
-import { createApp } from './app.js'
+import express from "express";
+import { renderToString } from "vue/server-renderer";
+import { createApp } from "./app.js";
 
 const createServer = () => {
-    // 创建一个express实例
-    const server = express();
+  // 创建一个express实例
+  const server = express();
 
-    // 通过express.get方法创建一个路由, 作用是当浏览器访问'/'时, 对该请求进行处理
-    server.get('/', async (req, res) => {
+  // 通过express.get方法创建一个路由, 作用是当浏览器访问'/'时, 对该请求进行处理
+  server.get("/", async (req, res) => {
     // 通过createSSRApp创建一个vue实例
     const app = createApp();
 
     let initData = null;
     // 判断是否有我们自定义的asyncData方法，如果有就用该函数初始化数据
     if (app._component.asyncData) {
-        initData = await app._component.asyncData();
+      initData = await app._component.asyncData();
     }
 
     // 通过renderToString将vue实例渲染成字符串
     renderToString(app).then((html) => {
-        // 将字符串插入到html模板中
-        // 通过一个script标签将初始化数据挂载到window.__INITIAL_DATA__上
-        const htmlStr = `
+      // 将字符串插入到html模板中
+      // 通过一个script标签将初始化数据挂载到window.__INITIAL_DATA__上
+      const htmlStr = `
         <!DOCTYPE html>
         <html>
             <head>
@@ -41,18 +41,18 @@ const createServer = () => {
             </body>
         </html>
         `;
-        // 通过res.send将字符串返回给浏览器
-        res.send(htmlStr);
+      // 通过res.send将字符串返回给浏览器
+      res.send(htmlStr);
     });
-    })
+  });
 
-    // 将当前目录作为静态资源目录，这样浏览器才能访问到client-entry.js
-    server.use(express.static('.'));
+  // 将当前目录作为静态资源目录，这样浏览器才能访问到client-entry.js
+  server.use(express.static("."));
 
-    // 监听3000端口
-    server.listen(3000, () => {
-    console.log('ready http://localhost:3000')
-    })
-}
+  // 监听3000端口
+  server.listen(3000, () => {
+    console.log("ready http://localhost:3000");
+  });
+};
 
 export default createServer;

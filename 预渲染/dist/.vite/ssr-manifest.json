@@ -1,0 +1,23 @@
+{
+  "\u0000plugin-vue:export-helper": [],
+  "\u0000vite/modulepreload-polyfill.js": [],
+  "index.html": [],
+  "node_modules/@unhead/dom/dist/index.mjs": [],
+  "node_modules/@unhead/shared/dist/index.mjs": [],
+  "node_modules/@unhead/vue/dist/shared/vue.8fc199ce.mjs": [],
+  "node_modules/@unhead/vue/dist/shared/vue.f49591ad.mjs": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/hookable/dist/index.mjs": [],
+  "node_modules/unhead/dist/index.mjs": [],
+  "node_modules/vite-ssg/dist/client/single-page.mjs": [],
+  "node_modules/vite-ssg/dist/shared/vite-ssg.5912142e.mjs": [],
+  "node_modules/vite-ssg/dist/shared/vite-ssg.a009fbf1.mjs": [],
+  "src/App.vue": [],
+  "src/App.vue?vue&type=style&index=0&lang.css": [],
+  "src/components/Counter.vue": [],
+  "src/components/Counter.vue?vue&type=style&index=0&scoped=00d6e163&lang.css": [],
+  "src/main.js": []
+}

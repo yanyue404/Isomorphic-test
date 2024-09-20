@@ -1,0 +1,21 @@
+{
+  "name": "isomorphic-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite-ssg build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@unhead/vue": "^1.11.6",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.6",
+    "vite-ssg": "^0.23.8",
+    "vue-router": "^4.4.5"
+  }
+}

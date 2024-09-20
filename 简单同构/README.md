@@ -1,6 +1,5 @@
-
-## 执行vue服务器端渲染
+## 执行 vue 服务器端渲染
 
 ```
-node index.js
+node server.js
 ```
